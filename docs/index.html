@@ -142,6 +142,7 @@ body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-in
 .notes button:disabled{opacity:.6}
 .notes .st{font-size:14px; font-weight:600; color:var(--sh-fg)}
 .notes .st.err{color:#b3261e}
+.notes .st a{color:var(--sh-acc); font-weight:700}
 @media (max-width:860px){ .memo-body{grid-template-columns:1fr} }
 
 /* swatches */
@@ -643,7 +644,7 @@ body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-in
         </div>
         <form class="notes" id="notesForm" novalidate>
           <h3><span class="en">Your notes</span><span class="es">Sus notas</span></h3>
-          <p><span class="en">Which design do you like? What would you change? Type here and press Send. Brandon reads everything you write here. If you'd rather write entirely in Spanish, that's okay.</span><span class="es">¿Qué diseño les gusta? ¿Qué cambiarían? Escriban aquí y toquen Enviar. Brandon lee todo lo que escriban aquí. Si prefieren escribir todo en español, está bien.</span></p>
+          <p><span class="en">Which design do you like? What would you change? Type here and press Send, and your notes go straight to Brandon's phone as a text message. If you'd rather write entirely in Spanish, that's okay.</span><span class="es">¿Qué diseño les gusta? ¿Qué cambiarían? Escriban aquí y toquen Enviar, y sus notas le llegan directo al celular de Brandon como mensaje de texto. Si prefieren escribir todo en español, está bien.</span></p>
           <label><span class="en">Your name</span><span class="es">Su nombre</span><input id="noteName" type="text" autocomplete="name" maxlength="120"></label>
           <label><span class="en">Notes</span><span class="es">Notas</span><textarea id="noteText" maxlength="5000" required></textarea></label>
           <div class="row"><button type="submit" id="noteSend"><span class="en">Send</span><span class="es">Enviar</span></button><span class="st" id="noteStatus" aria-live="polite"></span></div>
@@ -1288,15 +1289,25 @@ const BREAKFAST = [
     if (!text){ st.innerHTML = bi('Please write something first.', 'Primero escriban algo.'); return; }
     btn.disabled = true;
     st.innerHTML = bi('Sending…', 'Enviando…');
+    const name = document.getElementById('noteName').value.trim();
+    const design = lastDesign === 'home' ? '' : lastDesign;
+    let saved = false;
     try{
       const r = await fetch('/api/notes', {method:'POST', headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({name: document.getElementById('noteName').value.trim(), text, design: lastDesign === 'home' ? '' : lastDesign, lang: root.dataset.lang})});
-      if (!r.ok) throw new Error(String(r.status));
+        body: JSON.stringify({name, text, design, lang: root.dataset.lang})});
+      saved = r.ok;
+    }catch(err){ saved = false; }
+    if (saved){
       document.getElementById('noteText').value = '';
       st.innerHTML = bi('Sent. Thank you!', 'Enviado. ¡Gracias!');
-    }catch(err){
-      st.className = 'st err';
-      st.innerHTML = bi('Could not send. Please text Brandon at 832-767-7574 instead.', 'No se pudo enviar. Por favor mándenle un texto a Brandon al 832-767-7574.');
+    } else {
+      /* No server behind this copy of the page (GitHub Pages): hand the note to the phone's messaging app. */
+      const msg = 'Vivero de Rosas notes' + (name ? ' from ' + name : '') + (design ? ' (design: ' + design + ')' : '') + ':\n\n' + text;
+      const sms = 'sms:+18327677574?&body=' + encodeURIComponent(msg);
+      const mail = 'mailto:brandon.bridges@gmail.com?subject=' + encodeURIComponent('Vivero de Rosas notes') + '&body=' + encodeURIComponent(msg);
+      st.innerHTML = bi('Your messaging app should open with your notes ready to send. If it didn\'t: ', 'Se debería abrir su app de mensajes con sus notas listas para enviar. Si no se abrió: ') +
+        '<a href="' + sms + '">' + bi('text Brandon', 'mandar texto a Brandon') + '</a> · <a href="' + mail + '">' + bi('email Brandon', 'mandar correo a Brandon') + '</a>';
+      location.href = sms;
     }
     btn.disabled = false;
   });
