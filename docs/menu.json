@@ -1,0 +1,148 @@
+{
+  "menu": [
+    {
+      "en": "Street taco",
+      "es": "Street taco",
+      "xen": "Corn tortilla, your choice of carne",
+      "xes": "Tortilla de maíz, con la carne que elijas",
+      "p": "$2.50",
+      "u": true
+    },
+    {
+      "en": "Taco",
+      "es": "Taco",
+      "xen": "Flour tortilla or handmade corn tortilla",
+      "xes": "Tortilla de harina o de maíz hecha a mano",
+      "p": "$3",
+      "u": true
+    },
+    {
+      "en": "Quesabirria (3)",
+      "es": "Quesabirria (3)",
+      "xen": "Three crispy tacos with consomé",
+      "xes": "Tres tacos dorados con consomé",
+      "p": "$12"
+    },
+    {
+      "en": "Torta",
+      "es": "Torta",
+      "xen": "Your choice of carne on telera bread",
+      "xes": "Con la carne que elijas, en pan telera",
+      "p": "$12"
+    },
+    {
+      "en": "Burrito",
+      "es": "Burrito",
+      "xen": "Your choice of carne, rice and beans",
+      "xes": "Con la carne que elijas, arroz y frijoles",
+      "p": "$12"
+    },
+    {
+      "en": "Quesadilla",
+      "es": "Quesadilla",
+      "xen": "Flour tortilla, melted cheese, your choice of carne",
+      "xes": "Tortilla de harina, queso derretido y la carne que elijas",
+      "p": "$12"
+    },
+    {
+      "en": "Sopes",
+      "es": "Sopes",
+      "xen": "Thick corn base, beans, carne, crema, cheese",
+      "xes": "Masa gruesa, frijoles, carne, crema y queso",
+      "p": "$4",
+      "u": true
+    },
+    {
+      "en": "Platillo de pollo",
+      "es": "Platillo de pollo",
+      "xen": "Chicken plate with rice and beans, includes 3 tortillas",
+      "xes": "Pollo con arroz y frijoles, incluye 3 tortillas",
+      "p": "$12"
+    },
+    {
+      "en": "Pizza birria",
+      "es": "Pizza birria",
+      "xen": "Birria and melted cheese, cut in slices",
+      "xes": "Birria y queso derretido, en rebanadas",
+      "p": "$17"
+    },
+    {
+      "en": "Gordita",
+      "es": "Gordita",
+      "xen": "Stuffed corn pocket, your choice of carne",
+      "xes": "Rellena con la carne que elijas",
+      "p": "$7"
+    },
+    {
+      "en": "Ramen birria",
+      "es": "Ramen birria",
+      "xen": "Noodles in birria consomé with meat, onion and cilantro",
+      "xes": "Fideos en consomé de birria con carne, cebolla y cilantro",
+      "p": "$12"
+    },
+    {
+      "en": "Shrimp taco plate with soda",
+      "es": "Platillo de tacos de camarón con soda",
+      "xen": "Tacos de camarón, rice and beans, and a soda",
+      "xes": "Tacos de camarón, arroz, frijoles y refresco",
+      "p": "$14"
+    },
+    {
+      "en": "Flautas plate",
+      "es": "Platillo de flautas",
+      "xen": "Crispy flautas with rice and beans",
+      "xes": "Flautas doradas con arroz y frijoles",
+      "p": "$12"
+    }
+  ],
+  "combos": [
+    {
+      "en": "Lunch combo #1",
+      "es": "Combo de almuerzo #1",
+      "xen": "Four tacos and a free soda",
+      "xes": "Cuatro tacos y un refresco gratis",
+      "p": "$10"
+    },
+    {
+      "en": "Lunch combo #2",
+      "es": "Combo de almuerzo #2",
+      "xen": "Two gorditas",
+      "xes": "Dos gorditas",
+      "p": "$10"
+    }
+  ],
+  "carnes": [
+    "Fajita",
+    "Pastor",
+    "Pollo",
+    "Chorizo",
+    "Birria",
+    "Tripa",
+    "Suadero",
+    "Camarón",
+    "Chicharrón"
+  ],
+  "breakfast": [
+    {
+      "en": "Chorizo con huevo",
+      "es": "Chorizo con huevo"
+    },
+    {
+      "en": "Jamón con huevo (ham and egg)",
+      "es": "Jamón con huevo"
+    },
+    {
+      "en": "Huevo a la mexicana",
+      "es": "Huevo a la mexicana"
+    },
+    {
+      "en": "Tocino con huevo (bacon and egg)",
+      "es": "Tocino con huevo"
+    }
+  ],
+  "catering": {
+    "note_en": "Packages and pricing coming soon. Ask us for a quote for your event.",
+    "note_es": "Paquetes y precios muy pronto. Pídanos una cotización para su evento.",
+    "items": []
+  }
+}

@@ -181,6 +181,15 @@ body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-in
 .blist li{display:flex; gap:10px; align-items:baseline}
 .blist li::before{content:"·"; font-weight:900}
 
+[data-catering]{margin-top:16px}
+[data-catering] h4{font-size:12px; letter-spacing:.14em; text-transform:uppercase; opacity:.8; margin:14px 0 4px}
+[data-catering] .cat-note{font-size:1em; opacity:.9}
+[data-catering] .mi{border-bottom:1px solid color-mix(in srgb, currentColor 22%, transparent); padding:10px 0}
+.o5-catering{width:min(720px,100%)}
+.o5-catering .mi-p{color:var(--gold)}
+.admin-link{text-align:center; margin-top:40px; font-size:13px}
+.admin-link a{color:var(--sh-mut); text-decoration:none}
+.admin-link a:hover{color:var(--sh-fg)}
 .view{display:block}
 @media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important} }
 
@@ -732,6 +741,7 @@ body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-in
         <div class="fact"><div class="k"><span class="en">Hours</span><span class="es">Horario</span></div><div class="v"><span class="en">To confirm</span><span class="es">Por confirmar</span><small><span class="en">Shown as "call for today's hours" until the family confirms</span><span class="es">Se muestra "llama para el horario de hoy" hasta que la familia confirme</span></small></div></div>
       </div>
       <p class="note"><b><span class="en">About the photos.</span><span class="es">Sobre las fotos.</span></b> <span class="en">Every design has six photo spots, now filled with real pictures: the family portrait leads every design, then the truck, the window, the menu, the catering flyer and the two daisies. Use "Try your photos" at the top to preview other pictures across all five designs. They stay on your device.</span><span class="es">Cada diseño tiene seis espacios para fotos, ya con fotos reales: el retrato de la familia abre cada diseño, y luego la troca, la ventanilla, el menú, el volante de taquizas y las dos flores. Usa "Prueba tus fotos" arriba para probar otras fotos en los cinco diseños. Se quedan en tu dispositivo.</span></p>
+      <p class="admin-link"><a href="admin/">Admin</a></p>
     </div>
   </div>
 </section>
@@ -813,6 +823,7 @@ body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-in
           <li><span class="en">Agua fresca del día, 100% natural</span><span class="es">Agua fresca del día, 100% natural</span></li>
           <li><span class="en">Call XXX-XXX-XXXX for a quote</span><span class="es">Llama al XXX-XXX-XXXX para una cotización</span></li>
         </ul>
+        <div data-catering hidden></div>
       </div>
     </div>
   </section>
@@ -895,6 +906,7 @@ body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-in
         <h2 class="fat"><span class="en">A family in a truck</span><span class="es">Una familia en una troca</span></h2>
         <p><span class="en">The name means "rose nursery," and the whole operation is family: family recipes, family hands making the tortillas, family at the window taking your order. We cook the way we'd cook for a Sunday at home, then we open the window.</span><span class="es">El nombre significa vivero de rosas, y todo el negocio es familia: recetas de familia, manos de familia haciendo las tortillas, familia en la ventanilla tomando tu orden. Cocinamos como para un domingo en casa, y luego abrimos la ventanilla.</span></p>
         <p><span class="en">Having a party? We do taquizas and cazuelas for any kind of event. Call us.</span><span class="es">¿Tienes fiesta? Hacemos taquizas y cazuelas para cualquier tipo de evento. Llámanos.</span></p>
+        <div data-catering hidden></div>
       </div>
     </div>
   </section>
@@ -981,7 +993,7 @@ body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-in
   <section class="o3-band">
     <div class="wrap">
       <div><h3><span class="en">Delivery</span><span class="es">Entrega a domicilio</span></h3><p><span class="en">Free on orders over $40. Call XXX-XXX-XXXX, or find us on DoorDash.</span><span class="es">Gratis en pedidos de más de $40. Llama al XXX-XXX-XXXX o búscanos en DoorDash.</span></p></div>
-      <div><h3><span class="en">Taquizas &amp; cazuelas</span><span class="es">Taquizas y cazuelas</span></h3><p><span class="en">Taco bars and big pots of guisado for any event. We set up, we cook, your guests eat.</span><span class="es">Barras de tacos y cazuelas de guisado para cualquier evento. Nosotros montamos y cocinamos; tus invitados comen.</span></p></div>
+      <div><h3><span class="en">Taquizas &amp; cazuelas</span><span class="es">Taquizas y cazuelas</span></h3><p><span class="en">Taco bars and big pots of guisado for any event. We set up, we cook, your guests eat.</span><span class="es">Barras de tacos y cazuelas de guisado para cualquier evento. Nosotros montamos y cocinamos; tus invitados comen.</span></p><div data-catering hidden></div></div>
       <div><h3><span class="en">At the window</span><span class="es">En la ventanilla</span></h3><p><span class="en">Cash and all major cards. Call for today's hours.</span><span class="es">Efectivo y todas las tarjetas. Llama para el horario de hoy.</span></p></div>
     </div>
   </section>
@@ -1057,7 +1069,7 @@ body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-in
         <div class="o4-panel"><h3>Carnes</h3><div data-carnes></div></div>
         <div class="o4-panel y"><h3><span class="en">Breakfast tacos</span><span class="es">Tacos de desayuno</span></h3><div data-breakfast></div><p><span class="en">Flour or corn tortilla.</span><span class="es">Tortilla de harina o de maíz.</span></p></div>
         <div class="o4-panel"><h3><span class="en">Delivery</span><span class="es">Entrega</span></h3><div class="big"><span class="en">Free over $40</span><span class="es">Gratis +$40</span></div><p><span class="en">Call XXX-XXX-XXXX or order on DoorDash. Agua fresca del día available, 100% natural.</span><span class="es">Llama al XXX-XXX-XXXX o pide por DoorDash. Hay agua fresca del día, 100% natural.</span></p></div>
-        <div class="o4-panel"><h3><span class="en">Catering</span><span class="es">Taquizas</span></h3><p style="color:#eee; font-size:16px"><span class="en">Taquizas y cazuelas for any event. Call for a quote.</span><span class="es">Taquizas y cazuelas para cualquier evento. Llama para cotizar.</span></p></div>
+        <div class="o4-panel"><h3><span class="en">Catering</span><span class="es">Taquizas</span></h3><p style="color:#eee; font-size:16px"><span class="en">Taquizas y cazuelas for any event. Call for a quote.</span><span class="es">Taquizas y cazuelas para cualquier evento. Llama para cotizar.</span></p><div data-catering hidden></div></div>
       </div>
     </div>
   </section>
@@ -1131,6 +1143,7 @@ body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-in
       <ul class="list">
         <li>Quinceañeras</li><li><span class="en">Weddings</span><span class="es">Bodas</span></li><li><span class="en">Birthdays</span><span class="es">Cumpleaños</span></li><li><span class="en">Baptisms</span><span class="es">Bautizos</span></li><li><span class="en">Office lunches</span><span class="es">Comidas de oficina</span></li><li><span class="en">Graduations</span><span class="es">Graduaciones</span></li><li><span class="en">Backyard parties</span><span class="es">Fiestas en el patio</span></li>
       </ul>
+      <div data-catering hidden class="o5-catering"></div>
       <dl class="invite"><div class="in">
         <div><dt><span class="en">Call or text</span><span class="es">Llama o escribe</span></dt><dd>XXX-XXX-XXXX</dd></div>
         <div><dt><span class="en">Based in</span><span class="es">Ubicados en</span></dt><dd>Cypress, Texas</dd></div>
@@ -1179,7 +1192,8 @@ body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-in
 /* Photos: when the real pictures are embedded, list them here in slot order (1 truck, 2 window, 3 menu, 4 catering, 5 yellow daisy, 6 pink daisy). */
 const PHOTOS = ['img/truck.jpg','img/window.jpg','img/menu.jpg','img/taquizas.jpg','img/daisy-menu.jpg','img/daisy-carnes.jpg','img/family.jpg'];
 
-const MENU = [
+/* Fallback menu data. The live site loads menu.json (edited from /admin/) and overrides these. */
+let MENU = [
   {en:"Street taco", es:"Street taco", xen:"Corn tortilla, your choice of carne", xes:"Tortilla de maíz, con la carne que elijas", p:"$2.50", u:true},
   {en:"Taco", es:"Taco", xen:"Flour tortilla or handmade corn tortilla", xes:"Tortilla de harina o de maíz hecha a mano", p:"$3", u:true},
   {en:"Quesabirria (3)", es:"Quesabirria (3)", xen:"Three crispy tacos with consomé", xes:"Tres tacos dorados con consomé", p:"$12"},
@@ -1194,17 +1208,18 @@ const MENU = [
   {en:"Shrimp taco plate with soda", es:"Platillo de tacos de camarón con soda", xen:"Tacos de camarón, rice and beans, and a soda", xes:"Tacos de camarón, arroz, frijoles y refresco", p:"$14"},
   {en:"Flautas plate", es:"Platillo de flautas", xen:"Crispy flautas with rice and beans", xes:"Flautas doradas con arroz y frijoles", p:"$12"}
 ];
-const COMBOS = [
+let COMBOS = [
   {en:"Lunch combo #1", es:"Combo de almuerzo #1", xen:"Four tacos and a free soda", xes:"Cuatro tacos y un refresco gratis", p:"$10"},
   {en:"Lunch combo #2", es:"Combo de almuerzo #2", xen:"Two gorditas", xes:"Dos gorditas", p:"$10"}
 ];
-const CARNES = ["Fajita","Pastor","Pollo","Chorizo","Birria","Tripa","Suadero","Camarón","Chicharrón"];
-const BREAKFAST = [
+let CARNES = ["Fajita","Pastor","Pollo","Chorizo","Birria","Tripa","Suadero","Camarón","Chicharrón"];
+let BREAKFAST = [
   {en:"Chorizo con huevo", es:"Chorizo con huevo"},
   {en:"Jamón con huevo (ham and egg)", es:"Jamón con huevo"},
   {en:"Huevo a la mexicana", es:"Huevo a la mexicana"},
   {en:"Tocino con huevo (bacon and egg)", es:"Tocino con huevo"}
 ];
+let CATERING = {note_en:"", note_es:"", items:[]};
 
 (function(){
   const root = document.documentElement;
@@ -1215,24 +1230,60 @@ const BREAKFAST = [
   const bi = (en, es) => '<span class="en">' + en + '</span><span class="es">' + es + '</span>';
 
   /* ---------- render shared menu blocks ---------- */
+  const esc = v => String(v == null ? '' : v).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const bt = (en, es) => bi(esc(en), esc(es || en));
   function menuHTML(items){
     return '<ul class="menu">' + items.map(m =>
-      '<li class="mi"><span class="mi-n">' + bi(m.en, m.es) + '<span class="mi-x">' + bi(m.xen, m.xes) + '</span></span>' +
-      '<span class="mi-p">' + m.p + (m.u ? '<small>' + bi('each','c/u') + '</small>' : '') + '</span></li>').join('') + '</ul>';
+      '<li class="mi"><span class="mi-n">' + bt(m.en, m.es) + (m.xen || m.xes ? '<span class="mi-x">' + bt(m.xen, m.xes) + '</span>' : '') + '</span>' +
+      '<span class="mi-p">' + esc(m.p) + (m.u ? '<small>' + bi('each','c/u') + '</small>' : '') + '</span></li>').join('') + '</ul>';
   }
-  document.querySelectorAll('[data-menu]').forEach(el => {
-    if (el.hasAttribute('data-split')){
-      const half = Math.ceil(MENU.length / 2);
-      el.innerHTML = menuHTML(MENU.slice(0, half)) + menuHTML(MENU.slice(half));
-    } else el.innerHTML = menuHTML(MENU);
-  });
-  document.querySelectorAll('[data-combos]').forEach(el => { el.innerHTML = menuHTML(COMBOS) });
-  document.querySelectorAll('[data-carnes]').forEach(el => {
-    el.innerHTML = '<ul class="chips">' + CARNES.map(c => '<li>' + c + '</li>').join('') + '</ul>';
-  });
-  document.querySelectorAll('[data-breakfast]').forEach(el => {
-    el.innerHTML = '<ul class="blist">' + BREAKFAST.map(b => '<li>' + bi(b.en, b.es) + '</li>').join('') + '</ul>';
-  });
+  function renderMenus(){
+    document.querySelectorAll('[data-menu]').forEach(el => {
+      if (el.hasAttribute('data-split')){
+        const half = Math.ceil(MENU.length / 2);
+        el.innerHTML = menuHTML(MENU.slice(0, half)) + menuHTML(MENU.slice(half));
+      } else el.innerHTML = menuHTML(MENU);
+    });
+    document.querySelectorAll('[data-combos]').forEach(el => { el.innerHTML = COMBOS.length ? menuHTML(COMBOS) : '<p class="mi-x">' + bi('Coming soon.', 'Muy pronto.') + '</p>' });
+    document.querySelectorAll('[data-carnes]').forEach(el => {
+      el.innerHTML = '<ul class="chips">' + CARNES.map(c => '<li>' + esc(c) + '</li>').join('') + '</ul>';
+    });
+    document.querySelectorAll('[data-breakfast]').forEach(el => {
+      el.innerHTML = '<ul class="blist">' + BREAKFAST.map(b => '<li>' + bt(b.en, b.es) + '</li>').join('') + '</ul>';
+    });
+    document.querySelectorAll('[data-catering]').forEach(el => {
+      const c = CATERING || {};
+      let h = '';
+      if (c.note_en || c.note_es) h += '<p class="cat-note">' + bt(c.note_en, c.note_es) + '</p>';
+      if (c.items && c.items.length) h += '<h4>' + bi('Catering packages', 'Paquetes de taquiza') + '</h4>' + menuHTML(c.items);
+      el.innerHTML = h;
+      el.hidden = !h;
+    });
+    /* keep Google's structured menu data in sync */
+    try{
+      const ld = document.querySelector('script[type="application/ld+json"]');
+      const j = JSON.parse(ld.textContent);
+      const r = (j['@graph'] || []).find(n => n['@type'] === 'Restaurant');
+      const item = m => ({"@type":"MenuItem", name: m.en, description: m.xen || undefined, offers: {"@type":"Offer", price: String(m.p || '').replace(/[^0-9.]/g,''), priceCurrency:"USD"}});
+      if (r && r.hasMenu){
+        r.hasMenu.hasMenuSection = [
+          {"@type":"MenuSection", name:"Tacos & Plates", hasMenuItem: MENU.map(item)},
+          {"@type":"MenuSection", name:"Lunch Combos", hasMenuItem: COMBOS.map(item)},
+          {"@type":"MenuSection", name:"Carnes (meats)", description: CARNES.join(', ')},
+          {"@type":"MenuSection", name:"Breakfast Tacos", description: BREAKFAST.map(b => b.en).join(', ') + '. Flour or corn tortilla.'},
+          {"@type":"MenuSection", name:"Drinks", description:"Agua fresca del día, 100% natural"}
+        ].concat(CATERING && CATERING.items && CATERING.items.length ? [{"@type":"MenuSection", name:"Catering", hasMenuItem: CATERING.items.map(item)}] : []);
+        ld.textContent = JSON.stringify(j, null, 2);
+      }
+    }catch(e){}
+  }
+  renderMenus();
+  /* live menu: menu.json is edited from the admin page and committed to the site */
+  fetch('menu.json', {cache:'no-store'}).then(r => r.ok ? r.json() : null).then(d => {
+    if (!d || !Array.isArray(d.menu)) return;
+    MENU = d.menu; COMBOS = d.combos || []; CARNES = d.carnes || CARNES; BREAKFAST = d.breakfast || BREAKFAST; CATERING = d.catering || CATERING;
+    renderMenus();
+  }).catch(() => {});
 
   /* ---------- daisies (the menus painted on the truck) ---------- */
   function daisy(words, center, petal, text, centerFill, centerText){
