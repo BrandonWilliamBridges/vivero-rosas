@@ -144,5 +144,10 @@
     "note_en": "Packages and pricing coming soon. Ask us for a quote for your event.",
     "note_es": "Paquetes y precios muy pronto. Pídanos una cotización para su evento.",
     "items": []
+  },
+  "info": {
+    "phone": "",
+    "hours_en": "",
+    "hours_es": ""
   }
 }

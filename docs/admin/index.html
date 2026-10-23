@@ -112,6 +112,14 @@ details ol, details ul{padding-left:20px; margin:8px 0}
 
 <!-- ============ editor ============ -->
 <main class="wrap" id="editor" hidden>
+  <h2>Phone and hours<small>The business phone shows on the site with a tap-to-call link. Leave it empty to show no phone. Hours are free text, for example "Tue–Sun 7am–3pm".</small></h2>
+  <div class="card item">
+    <label>Business phone<input id="infoPhone" inputmode="tel" placeholder="832-555-0100"></label>
+    <span></span>
+    <label>Hours (English)<input id="infoHoursEn" placeholder="Tue–Sun 7am–3pm"></label>
+    <label>Hours (Spanish)<input id="infoHoursEs" placeholder="Mar–Dom 7am–3pm"></label>
+  </div>
+
   <h2>Menu items<small>Name and description in English and Spanish, plus the price. "Each" shows "each / c/u" after the price.</small></h2>
   <div id="menuList"></div>
   <button class="btn add" data-add="menu">+ Add menu item</button>
@@ -266,6 +274,7 @@ details ol, details ul{padding-left:20px; margin:8px 0}
     data = f ? JSON.parse(f.text) : {menu:[], combos:[], carnes:[], breakfast:[], catering:{note_en:'', note_es:'', items:[]}};
     data.combos = data.combos || []; data.carnes = data.carnes || []; data.breakfast = data.breakfast || [];
     data.catering = data.catering || {note_en:'', note_es:'', items:[]}; data.catering.items = data.catering.items || [];
+    data.info = data.info || {phone:'', hours_en:'', hours_es:''};
     $('setup').hidden = true; $('login').hidden = true;
     $('editor').hidden = false; $('savebar').hidden = false; $('logoutBtn').hidden = false; $('pwBtn').hidden = false;
     render(); setDirty(false);
@@ -305,6 +314,9 @@ details ol, details ul{padding-left:20px; margin:8px 0}
     $('carnesList').innerHTML = data.carnes.map((c, i) => '<span class="chip">' + esc(c) + '<button data-carne="' + i + '" title="Remove" aria-label="Remove ' + esc(c) + '">×</button></span>').join('') || '<p class="hint">No carnes listed.</p>';
     $('catEn').value = data.catering.note_en || '';
     $('catEs').value = data.catering.note_es || '';
+    $('infoPhone').value = data.info.phone || '';
+    $('infoHoursEn').value = data.info.hours_en || '';
+    $('infoHoursEs').value = data.info.hours_es || '';
   }
 
   document.addEventListener('input', e => {
@@ -317,6 +329,9 @@ details ol, details ul{padding-left:20px; margin:8px 0}
     }
     if (e.target.id === 'catEn'){ data.catering.note_en = e.target.value; setDirty(true); }
     if (e.target.id === 'catEs'){ data.catering.note_es = e.target.value; setDirty(true); }
+    if (e.target.id === 'infoPhone'){ data.info.phone = e.target.value; setDirty(true); }
+    if (e.target.id === 'infoHoursEn'){ data.info.hours_en = e.target.value; setDirty(true); }
+    if (e.target.id === 'infoHoursEs'){ data.info.hours_es = e.target.value; setDirty(true); }
   });
   document.addEventListener('click', e => {
     const b = e.target.closest('button'); if (!b) return;
@@ -354,13 +369,16 @@ details ol, details ul{padding-left:20px; margin:8px 0}
       if (!String(m.p || '').trim()) problems.push((m.en || k + ' item ' + (i + 1)) + ' has no price');
     }));
     data.breakfast.forEach((m, i) => { if (!String(m.en || '').trim()) problems.push('breakfast taco ' + (i + 1) + ' has no name'); });
+    const ph = String(data.info.phone || '').replace(/\D/g, '');
+    if (ph && ph.length !== 10) problems.push('the phone number should have 10 digits (area code + number)');
     if (problems.length) return alert('Please fix before saving:\n\n• ' + problems.join('\n• '));
     const clean = s => String(s || '').trim();
     const tidy = m => { const o = {en: clean(m.en), es: clean(m.es) || clean(m.en)}; if ('p' in m){ o.xen = clean(m.xen); o.xes = clean(m.xes) || clean(m.xen); o.p = clean(m.p); if (m.u) o.u = true; } return o; };
     const out = {
       menu: data.menu.map(tidy), combos: data.combos.map(tidy),
       carnes: data.carnes.map(clean).filter(Boolean), breakfast: data.breakfast.map(tidy),
-      catering: {note_en: clean(data.catering.note_en), note_es: clean(data.catering.note_es), items: data.catering.items.map(tidy)}
+      catering: {note_en: clean(data.catering.note_en), note_es: clean(data.catering.note_es), items: data.catering.items.map(tidy)},
+      info: {phone: ph ? ph.slice(0,3) + '-' + ph.slice(3,6) + '-' + ph.slice(6) : '', hours_en: clean(data.info.hours_en), hours_es: clean(data.info.hours_es)}
     };
     $('saveBtn').disabled = true; $('saveSt').textContent = 'Saving…';
     try{
