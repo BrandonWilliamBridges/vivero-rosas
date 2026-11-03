@@ -143,26 +143,13 @@ body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-in
 .o3-band .wrap{padding-block:64px; display:grid; grid-template-columns:repeat(3,1fr); gap:28px}
 .o3-band h3{font-family:"DM Serif Display", Georgia, serif; font-weight:400; font-size:30px; color:var(--yolk)}
 .o3-band p{color:#dbe3f6; margin-top:6px; font-size:17px}
-.o3-cater{padding-block:72px; scroll-margin-top:64px}
-.o3-cater .head{display:grid; grid-template-columns:1.15fr .85fr; gap:48px; align-items:center}
-.o3-cater .eyebrow{font-weight:600; letter-spacing:.18em; text-transform:uppercase; font-size:13px; color:var(--cob)}
-.o3-cater h2{font-size:clamp(36px, 5vw, 56px); line-height:1; margin-top:10px}
-.o3-cater .lead{font-size:19px; color:var(--mut); margin-top:16px; max-width:50ch}
-.o3-cater .o3-frame .ph{aspect-ratio:4/5}
-.o3-cater .opts{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:44px}
-.o3-cater .opt{border:1.5px solid var(--cob); padding:22px; border-radius:4px; background:#fff}
-.o3-cater .opt h3{font-family:"DM Serif Display", Georgia, serif; font-weight:400; font-size:26px; color:var(--cob)}
-.o3-cater .opt .kind{font-size:12px; letter-spacing:.14em; text-transform:uppercase; font-weight:600; color:var(--mut); margin-top:2px}
-.o3-cater .opt p{margin-top:10px; font-size:16px}
-.o3-cater .addon{margin-top:18px; color:var(--mut); font-size:16px}
-.o3-cater .plan{display:grid; grid-template-columns:1.1fr .9fr; gap:40px; margin-top:40px; background:var(--cob); color:#fff; padding:36px 40px; border-radius:4px}
-.o3-cater .plan h3{font-family:"DM Serif Display", Georgia, serif; font-weight:400; font-size:30px; color:var(--yolk)}
-.o3-cater .plan ol{margin:14px 0 0; padding-left:1.3em; display:grid; gap:8px; font-size:17px; color:#dbe3f6}
-.o3-cater .plan ol b{color:#fff}
-.o3-cater .plan .call{align-self:center; font-size:18px; color:#dbe3f6}
-.o3-cater .plan .call a{color:#fff; font-weight:700}
-.o3-cater .plan .soon{margin-top:10px; font-size:15px; color:#dbe3f6}
-.o3-cater [data-catering]{margin-top:12px}
+.o3-cater{padding-block:72px 0; scroll-margin-top:64px}
+.o3-cater .plan{display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center; background:var(--cob); color:#fff; padding:36px 40px; border-radius:4px}
+.o3-cater h2{font-size:clamp(34px, 5vw, 52px); line-height:1; color:var(--yolk)}
+.o3-cater .lead{font-size:19px; color:#dbe3f6; margin-top:12px; max-width:46ch}
+.o3-cater .call{font-size:20px; color:#dbe3f6}
+.o3-cater .call a{color:#fff; font-weight:700}
+.o3-cater [data-catering]{margin-top:12px; color:#dbe3f6}
 .o3-cater [data-catering] h4{color:var(--yolk); opacity:1}
 .o3-band a[href="#catering"]{color:var(--yolk)}
 .o3-gal{padding-block:72px}
@@ -193,8 +180,8 @@ body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-in
 /* ---------- responsive ---------- */
 @media (max-width: 900px){
   .o3-hero, .o3-story, .o3-menu .cols, .o3-letter .inner{grid-template-columns:1fr}
-  .o3-band .wrap, .o3-menu .extras, .o3-cater .opts{grid-template-columns:1fr}
-  .o3-cater .head, .o3-cater .plan{grid-template-columns:1fr; gap:24px}
+  .o3-band .wrap, .o3-menu .extras{grid-template-columns:1fr}
+  .o3-cater .plan{grid-template-columns:1fr; gap:20px}
   .o3-cater .plan{padding:28px 22px}
 }
 @media (max-width: 520px){
@@ -344,47 +331,14 @@ body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-in
   </section>
 
   <section class="wrap o3-cater" id="catering">
-    <div class="head">
-      <div>
-        <div class="eyebrow"><span class="en">Catering · Taquizas y cazuelas</span><span class="es">Catering · Taquizas y cazuelas</span></div>
-        <h2 class="disp"><span class="en">Your party, our kitchen.</span><span class="es">Tu fiesta, nuestra cocina.</span></h2>
-        <p class="lead"><span class="en">Quinceañeras, weddings, birthdays, graduations, office lunches. Whatever you're celebrating, we bring the same handmade tortillas and slow-cooked carnes you get at the truck, made for a crowd.</span><span class="es">Quinceañeras, bodas, cumpleaños, graduaciones, comidas de oficina. Sea lo que sea que celebres, llevamos las mismas tortillas hechas a mano y carnes cocidas con calma de la troca, preparadas para todos tus invitados.</span></p>
-      </div>
-      <div class="o3-frame"><div class="ph" data-slot="4"></div></div>
-    </div>
-
-    <div class="opts">
-      <div class="opt">
-        <h3>Taquiza</h3>
-        <div class="kind"><span class="en">Taco bar</span><span class="es">Barra de tacos</span></div>
-        <p><span class="en">We set up a taco bar at your event and keep the tacos coming. Handmade tortillas, your choice of carnes, rice, beans, salsas, cebolla, cilantro and limón.</span><span class="es">Montamos una barra de tacos en tu evento y los servimos al momento. Tortillas hechas a mano, las carnes que elijas, arroz, frijoles, salsas, cebolla, cilantro y limón.</span></p>
-      </div>
-      <div class="opt">
-        <h3>Cazuelas</h3>
-        <div class="kind"><span class="en">Big pots, buffet style</span><span class="es">Para servir tipo buffet</span></div>
-        <p><span class="en">Big pots of carne and guisado, ready to serve. Fajita with grilled onions, pollo, birria with consomé and more, with tortillas, rice and beans on the side.</span><span class="es">Cazuelas grandes de carne y guisado, listas para servir. Fajita con cebolla asada, pollo, birria con consomé y más, con tortillas, arroz y frijoles.</span></p>
-      </div>
-      <div class="opt">
-        <h3>Charolas</h3>
-        <div class="kind"><span class="en">Party trays</span><span class="es">Bocadillos por charola</span></div>
-        <p><span class="en">Sopes, gorditas, flautas and quesabirria by the tray. Easy for office lunches, meetings and smaller get-togethers.</span><span class="es">Sopes, gorditas, flautas y quesabirria por charola. Ideal para comidas de oficina, juntas y reuniones pequeñas.</span></p>
-      </div>
-    </div>
-    <p class="addon"><span class="en">Add agua fresca del día, 100% natural, for the whole table.</span><span class="es">Agrega agua fresca del día, 100% natural, para toda la mesa.</span></p>
-
     <div class="plan">
       <div>
-        <h3><span class="en">Plan your event</span><span class="es">Planea tu evento</span></h3>
-        <ol>
-          <li><span class="en"><b>Tell us the basics:</b> the date, how many guests, and where.</span><span class="es"><b>Cuéntanos lo básico:</b> la fecha, cuántos invitados y dónde.</span></li>
-          <li><span class="en"><b>Pick your style:</b> taquiza, cazuelas, charolas, or a mix.</span><span class="es"><b>Elige el estilo:</b> taquiza, cazuelas, charolas o una mezcla.</span></li>
-          <li><span class="en"><b>Get your quote:</b> every event is different, so we price each one for you.</span><span class="es"><b>Recibe tu cotización:</b> cada evento es diferente, así que te damos un precio a tu medida.</span></li>
-        </ol>
+        <h2 class="disp"><span class="en">Catering</span><span class="es">Catering</span></h2>
+        <p class="lead"><span class="en">Catering is available for your event. Call us for details.</span><span class="es">Tenemos servicio de catering para tu evento. Llámanos para más información.</span></p>
         <div data-catering hidden></div>
       </div>
       <div class="call">
         <p><span class="en" data-cater-call-en></span><span class="es" data-cater-call-es></span></p>
-        <p class="soon"><span class="en">The earlier you reach out, the better, especially for weekends during quinceañera and wedding season.</span><span class="es">Entre más pronto nos avises, mejor, sobre todo para fines de semana en temporada de quinceañeras y bodas.</span></p>
       </div>
     </div>
   </section>
@@ -395,7 +349,7 @@ body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-in
       <div class="ph" data-slot="1"></div>
       <div class="ph" data-slot="2"></div>
       <div class="ph" data-slot="3"></div>
-      <div class="ph" data-slot="5"></div>
+      <div class="ph" data-slot="4"></div>
     </div>
   </section>
 
@@ -497,8 +451,8 @@ let INFO = {phone:"", hours_en:"", hours_es:"", instagram:"", facebook:"", tikto
     const ig = social(INFO.instagram, 'instagram.com/'), fb = social(INFO.facebook, 'facebook.com/'), tt = social(INFO.tiktok, 'tiktok.com/@'), dd = social(INFO.doordash, 'doordash.com/');
     const ddText = dd ? '<a href="' + esc(dd) + '" target="_blank" rel="noopener">DoorDash</a>' : 'DoorDash';
     document.querySelectorAll('[data-phone-sentence]').forEach(el => el.innerHTML = (digits ? 'Call <a href="' + tel + '">' + esc(nice) + '</a>, or find us on ' : 'Find us on ') + ddText + '.');
-    document.querySelectorAll('[data-cater-call-en]').forEach(el => el.innerHTML = digits ? 'Call us at <a href="' + tel + '">' + esc(nice) + '</a> or ask at the window to start planning.' : 'Ask at the window to start planning.');
-    document.querySelectorAll('[data-cater-call-es]').forEach(el => el.innerHTML = digits ? 'Llámanos al <a href="' + tel + '">' + esc(nice) + '</a> o pregunta en la ventanilla para empezar a planear.' : 'Pregunta en la ventanilla para empezar a planear.');
+    document.querySelectorAll('[data-cater-call-en]').forEach(el => el.innerHTML = digits ? 'Call <a href="' + tel + '">' + esc(nice) + '</a>' : 'Ask at the window.');
+    document.querySelectorAll('[data-cater-call-es]').forEach(el => el.innerHTML = digits ? 'Llama al <a href="' + tel + '">' + esc(nice) + '</a>' : 'Pregunta en la ventanilla.');
     document.querySelectorAll('[data-phone-sentence-es]').forEach(el => el.innerHTML = (digits ? 'Llama al <a href="' + tel + '">' + esc(nice) + '</a> o búscanos en ' : 'Búscanos en ') + ddText + '.');
     const ICON = {
       instagram: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.5.2-1.8.3-.4.2-.7.4-1 .7-.3.3-.5.6-.7 1-.1.3-.2.7-.3 1.8C3.4 8.5 3.4 8.9 3.4 12s0 3.5.1 4.7c.1 1.1.2 1.5.3 1.8.2.4.4.7.7 1 .3.3.6.5 1 .7.3.1.7.2 1.8.3 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.5-.2 1.8-.3.4-.2.7-.4 1-.7.3-.3.5-.6.7-1 .1-.3.2-.7.3-1.8.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.5-.3-1.8-.2-.4-.4-.7-.7-1-.3-.3-.6-.5-1-.7-.3-.1-.7-.2-1.8-.3C15.5 4 15.1 4 12 4zm0 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4zm5.2-2.9a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/></svg>',
