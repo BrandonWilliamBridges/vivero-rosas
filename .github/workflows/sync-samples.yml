@@ -1,6 +1,7 @@
 # Mirrors viveroderosas.com to BrandonWilliamBridges/website-samples/vivero-de-rosas/ on every push to main.
 # The site is already built (GitHub Pages serves docs/), so this copies docs/ and leaves out the menu
-# admin page and the search-engine verification file. .github/scripts/sync-to-samples.py does the rest:
+# admin page and the search-engine verification file. The sync script (.github/scripts/sync-to-samples.py in
+# website-samples, the only copy) does the rest:
 # it strips anything private, adjusts links and forms for the portfolio copy, and stops if anything looks like a secret.
 # Needs the repo secret SAMPLES_TOKEN (fine-grained token: website-samples only, Contents read and write).
 name: Sync to website-samples
@@ -52,7 +53,7 @@ jobs:
 
       - name: Copy into website-samples and push
         run: |
-          python3 src/.github/scripts/sync-to-samples.py \
+          python3 samples/.github/scripts/sync-to-samples.py \
             --out "$RUNNER_TEMP/out" \
             --samples samples \
             --message "Sync vivero-de-rosas from ${{ github.repository }}@${GITHUB_SHA::7}
