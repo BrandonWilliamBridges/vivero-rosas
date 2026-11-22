@@ -26,3 +26,6 @@ This site is mirrored to [BrandonWilliamBridges/website-samples](https://github.
 - **The sync workflow must keep working whenever the site changes.** It copies `docs/`, leaving out `docs/admin/` (the menu editor) and the search-engine verification file. If you move or rename the site's output, add a build step, or add files that must not be public, update the workflow in the same change.
 - Only the public site is copied. Never let it copy `.env` files, secrets, keys, databases or real customer data. The sync script strips those, points links at the copy's folder, removes analytics, adds `noindex`, stops forms from sending, and halts the sync if anything still looks like a secret. There is one copy of it, in website-samples at `.github/scripts/sync-to-samples.py`; the workflow runs it from its checkout of that repository.
 - The workflow needs the repo secret `SAMPLES_TOKEN`: a fine-grained token limited to website-samples, with Contents read and write. When it expires, make a new one and update the secret in every source repo.
+## Working with Brandon
+- Spell out every term. No acronyms, or put the short form in parentheses after the full term the first time.
+- Answer first, then the detail. Say plainly when something is inferred or couldn't be checked.
