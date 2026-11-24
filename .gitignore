@@ -8,3 +8,7 @@ notes.md
 .claude/settings.local.json
 CLAUDE.local.md
 .claude/worktrees/
+
+# Local secrets: never commit
+.env
+.env.*
